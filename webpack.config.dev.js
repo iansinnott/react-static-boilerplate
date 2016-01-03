@@ -10,7 +10,7 @@ var rupture = require('rupture');
 // host so it can load the right files. The HRM host is a bit stranger. For more
 // details on why we need this URL see the readme and:
 // https://github.com/glenjamin/webpack-hot-middleware/issues/37
-var DEV_PORT = process.env.DEV_PORT || 8888;
+var DEV_PORT = process.env.DEV_PORT || 3000;
 var DEV_HOST = '//localhost:' + DEV_PORT + '/';
 var HMR_HOST = DEV_HOST + '__webpack_hmr';
 
