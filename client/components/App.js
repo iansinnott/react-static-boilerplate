@@ -4,14 +4,23 @@ import 'normalize.css';
 // TDOO: Add font awesome
 
 import s from './App.styl';
+import logo from './react-logo.png';
 
 // Favicon link is created server-side, this is just make webpack package it
 import './favicon.ico';
 
 const ReactBoilerplate = props => (
   <div className={s.ReactBoilerplate}>
-    <h1>React Boilerplate</h1>
-    <p>Get that app up and running in no time</p>
+    <div className={s.siteTitle}>
+      <img src={logo} alt='React Logo' />
+      <h1>React Static Boilerplate</h1>
+    </div>
+    <p>Why React static?</p>
+    <ul>
+      <li><span className={s.hl}>Dev</span> friendly</li>
+      <li><span className={s.hl}>User</span> friendly</li>
+      <li><span className={s.hl}>SEO</span> friendly</li>
+    </ul>
   </div>
 );
 

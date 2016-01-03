@@ -4,8 +4,13 @@
   box-sizing border-box
 
 body
-  background black
+  background react-blue
   font-family helvetica
+  color darken(white, 10%)
+  font-size 18px
+
+h1
+  margin 20px 0
 
 pre
   font-family mono
@@ -14,6 +19,34 @@ pre
   border 1px solid border-gray
 
 .ReactBoilerplate
-  background js-yellow
-  color black
+  background black
   padding 20px
+  min-width 320px
+
+  h1
+    color react-blue
+    font-weight 300
+    font-size 52px
+
+  p
+    color white
+
+.hl
+  font-weight bold
+  color react-blue
+
+.siteTitle
+  display flex
+  align-items center
+  +below(420px)
+    display block
+
+  img
+    display inline-block
+    width auto
+    height 80px
+    margin-right 20px
+
+    +below(420px)
+      display block
+      margin 0 auto
