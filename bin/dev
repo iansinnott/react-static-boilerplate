@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+var url = require('url');
+var path = require('path');
+var express = require('express');
+var webpack = require('webpack');
+
+var config = require('../webpack.config.dev.js');
+
+var app = express();
+var compiler = webpack(config);
+
+app.use(require('webpack-dev-middleware')(compiler, {
+  noInfo: true,
+  publicPath: config.output.publicPath
+}));
+
+app.use(require('webpack-hot-middleware')(compiler));
+
+app.get('*', function(req, res) {
+  res.send('Not found. Dev server is only meant for hot reloading compiled JS files.');
+});
+
+// NOTE: url.parse can't handle URLs without a protocol explicitly defined. So
+// if we pase '//localhost:8888' it can't parse it. We manually add HTTPS even
+// though we are only interested in the port.
+var port = url.parse('http:' + config.output.publicPath).port; 
+
+app.listen(port, 'localhost', function(err) {
+  if (err) return console.log(err);
+  console.log(`Dev server listening at http://localhost:${port}`);
+});
