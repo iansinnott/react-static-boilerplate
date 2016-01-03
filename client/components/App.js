@@ -1,6 +1,7 @@
 import React from 'react';
 import 'normalize.css';
-import 'font-awesome-webpack';
+
+// TDOO: Add font awesome
 
 import s from './App.styl';
 
@@ -30,4 +31,3 @@ export const App = React.createClass({
     );
   },
 });
-

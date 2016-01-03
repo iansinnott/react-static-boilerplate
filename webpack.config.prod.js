@@ -4,6 +4,7 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var axis = require('axis');
 var rupture = require('rupture');
+var StaticSitePlugin = require('react-static-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
@@ -15,6 +16,8 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'public'),
     filename: '[name].js',
+    library: ['__APP__', '[name]'],
+    libraryTarget: 'umd',
     publicPath: '/',
   },
 
@@ -29,6 +32,11 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({
       screw_ie8: true,
       compressor: { warnings: false },
+    }),
+    new StaticSitePlugin({
+      src: 'app',
+      stylesheet: '/app.css',
+      favicon: '/favicon.ico',
     }),
   ],
 
