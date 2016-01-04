@@ -1,3 +1,5 @@
+![React Static Boilerplate](http://dropsinn.s3.amazonaws.com/Screen%20Shot%202016-01-03%20at%208.39.55%20PM.png)
+
 # React Static Boilerplate
 
 A boilerplate for building static sites with [React][] and [React Router][]
