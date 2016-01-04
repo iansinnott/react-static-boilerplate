@@ -48,6 +48,10 @@ ln -s $PWD/nginx.conf /usr/local/etc/nginx/servers/static-fun.conf
 nginx -s reload
 ```
 
+## Roadmap
+
+- [ ] Add [Docker Compose][] to run a production-like server on demand for manual testing
+
 ## Troubleshooting
 
 ### Babel Env
@@ -73,4 +77,5 @@ The `font-awesome-webpack` module does not seem to work with the approach of gen
 [Flow]: http://flowtype.org/
 [Nuclear JS]: https://github.com/optimizely/nuclear-js
 [Redux]: https://github.com/rackt/redux
+[Docker Compose]: https://docs.docker.com/compose/
 
