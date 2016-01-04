@@ -9,6 +9,7 @@
   "scripts": {
     "clean": "rimraf public",
     "lint": "eslint client",
+    "test": "echo 'No tests specified.'",
     "start:dev": "babel-node ./server.js",
     "start": "npm run start:dev",
     "build:static": "NODE_ENV=production webpack --config webpack.config.prod.js",
