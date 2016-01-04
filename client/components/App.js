@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { Link, IndexLink } from 'react-router';
 import 'normalize.css';
 
 // TDOO: Add font awesome
@@ -10,7 +11,7 @@ import logo from './react-logo.png';
 import './favicon.ico';
 
 export const About = props => (
-  <div className={s.About}>
+  <div className={s.page}>
     <div className={s.siteTitle}>
       <h1>About</h1>
     </div>
@@ -19,7 +20,7 @@ export const About = props => (
 );
 
 export const Home = props => (
-  <div className={s.Home}>
+  <div className={s.page}>
     <div className={s.siteTitle}>
       <img src={logo} alt='React Logo' />
       <h1>React Static Boilerplate</h1>
@@ -51,6 +52,10 @@ export const App = React.createClass({
   render() {
     return (
       <div className={s.App}>
+        <nav className={s.nav}>
+          <IndexLink to='/' activeClassName={s.active}>Home</IndexLink>
+          <Link to='/about' activeClassName={s.active}>About</Link>
+        </nav>
         {this.props.children}
       </div>
     );
