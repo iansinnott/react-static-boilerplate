@@ -13,13 +13,15 @@
     "start": "npm run start:dev",
     "build:static": "NODE_ENV=production webpack --config webpack.config.prod.js",
     "build": "npm run clean && npm run build:static",
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags",
     "bump:patch": "npm version patch -m \"v%s\"",
     "bump:minor": "npm version minor -m \"v%s\"",
     "bump": "npm run bump:patch"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/iansinnott/react-boilerplate"
+    "url": "https://github.com/iansinnott/react-statick-boilerplate"
   },
   "bugs": {
     "url": "https://github.com/iansinnott/react-boilerplate/issues"
