@@ -1,8 +1,7 @@
 {
-  "name": "react-boilerplate",
+  "name": "react-static-boilerplate",
   "version": "0.1.1",
-  "description": "",
-  "main": "bin/www",
+  "description": "A boilerplate for building static sites with React and React Router",
   "engines": {
     "node": "^4.2"
   },
@@ -22,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/iansinnott/react-statick-boilerplate"
+    "url": "https://github.com/iansinnott/react-static-boilerplate"
   },
   "bugs": {
     "url": "https://github.com/iansinnott/react-boilerplate/issues"
