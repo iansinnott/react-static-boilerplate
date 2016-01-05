@@ -6,8 +6,9 @@ A boilerplate for building static sites with [React][] and [React Router][]
 
 **Quick Start:**
 
-* `git clone https://github.com/iansinnott/react-boilerplate && cd react-boilerplate`
-* `npm install && npm start` to run a dev server
+* `git clone https://github.com/iansinnott/react-static-boilerplate my-static-site && cd my-static-site && rm -rf .git`
+* `npm install`
+* `npm start` to run a dev server
 * Write an awesome client-side app...
 * `npm build` to minify, package and generate static HTML files from your routes
 
@@ -48,6 +49,17 @@ ln -s $PWD/nginx.conf /usr/local/etc/nginx/servers/static-fun.conf
 nginx -s reload
 ```
 
+## Technology Used
+
+For further reading on the primary tech used in this boilerplate see the links below:
+
+* [Webpack][]
+* [Babel][]
+* [React][]
+* [React Router][]
+* [Stylus][]
+* [CSS Modules][]
+
 ## Roadmap
 
 - [ ] Add [Docker Compose][] to run a production-like server on demand for manual testing
@@ -66,16 +78,11 @@ The `font-awesome-webpack` module does not seem to work with the approach of gen
 [Webpack]: http://webpack.github.io/
 [Babel]: https://babeljs.io/
 [Stylus]: https://learnboost.github.io/stylus/
+[CSS Modules]: https://github.com/css-modules/css-modules
 [Express]: http://expressjs.com/
 [Waterline]: https://github.com/balderdashy/waterline
 [Flux]: https://facebook.github.io/flux/docs/overview.html
 [React Router]: https://github.com/rackt/react-router
-[hjs]: https://github.com/henrikjoreteg/hjs-webpack
-[ClojureScript]: https://github.com/clojure/clojurescript
-[core.typed]: https://github.com/clojure/core.typed
-[TypeScript]: https://github.com/Microsoft/TypeScript 
-[Flow]: http://flowtype.org/
-[Nuclear JS]: https://github.com/optimizely/nuclear-js
 [Redux]: https://github.com/rackt/redux
 [Docker Compose]: https://docs.docker.com/compose/
 
