@@ -8,6 +8,7 @@
   "scripts": {
     "clean": "rimraf public",
     "lint": "eslint client",
+    "conf": "babel-node ./scripts/generate-nginx-conf.js",
     "test": "echo 'No tests specified.'",
     "start:dev": "babel-node ./server.js",
     "start": "npm run start:dev",
@@ -24,7 +25,7 @@
     "url": "https://github.com/iansinnott/react-static-boilerplate"
   },
   "bugs": {
-    "url": "https://github.com/iansinnott/react-boilerplate/issues"
+    "url": "https://github.com/iansinnott/react-static-boilerplate/issues"
   },
   "author": "Ian Sinnott <ian@iansinnott.com> (http://iansinnott.com)",
   "license": "MIT",
