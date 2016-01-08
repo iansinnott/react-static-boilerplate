@@ -25,9 +25,30 @@ Now you're all set to deploy to your favorite hosting solution :beers:
 
 This project will generate all the static files you need to server a full, production-ready website. However your server will likely need some configuration so that it maps the same URLs React Router uses to actual static files. For example, the "about" page might have the following URL according to React Router: `/about`.
 
-However, a static server without any configuration would see the URL `/about` and return a 404 because it expects a URL of `/about.html` to actually server the file. There are many ways to handle this on different systems. Here is how you might handle it with Nginx. This example will assume you are on a Mac, but the configuration file should work with any modern Nginx version.
+However, a static server without any configuration would see the URL `/about` and return a 404 because it expects a URL of `/about.html` to actually server the file. There are many ways to handle this on different systems. Here is how you might handle it with Nginx.
 
-### Nginx on a Mac
+### Nginx
+
+This project contains a script to help generate a usable Nginx config. To run it:
+
+```
+npm run -s conf
+```
+
+This will output the config to stdout. Redirect it as you see fit to save it to disk:
+
+```
+npm run -s conf > my-site.conf
+```
+
+Once you've saved the file you can sym link it into place and reload Nginx. This is just an example, your path to Nginx will vary based on system:
+
+```
+ln -s $PWD/my-site.conf /path/to/nginx/conf-files/static-fun.conf
+nginx -s reload
+```
+
+### Testing the static site with Nginx on a Mac
 
 If you don't have Nginx yet install it with `brew`:
 
