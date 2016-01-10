@@ -30,5 +30,15 @@
     // Allow multiple components in a single file
     "react/no-multi-comp": [0],
 
+    // Do not require closing brackets to be on same line as opening brackets.
+    // This is good in theory but often very ugly when applied to a lone closing
+    // bracket of an opening tag:
+    // <div
+    //   someProp={true}
+    // >
+    // Or
+    // <div
+    //   someProp={true}>
+    "react/jsx-closing-bracket-location": [0],
   },
 }
