@@ -83,7 +83,9 @@ For further reading on the primary tech used in this boilerplate see the links b
 
 ## Roadmap
 
-- [ ] Add [Docker Compose][] to run a production-like server on demand for manual testing
+- [x] Add [Docker Compose][] to run a production-like server on demand for manual testing
+- [ ] Add readme docs for testing a prod site with Docker and Docker compose
+- [ ] Improved SVG tooling
 
 ## Troubleshooting
 
