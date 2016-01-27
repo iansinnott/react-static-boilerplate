@@ -21,6 +21,45 @@ Now you're all set to deploy to your favorite hosting solution :beers:
 * Awesome developer experience
 * Flexible. No file structure or naming conventions required. Use whatever modules you want
 
+## Opinionated styling
+
+This boilerplate is slightly opinionated, especially when it comes to CSS. Don't worry, you can easily change any of this but by default I use [Stylus][] and [CSS Modules][] for compiling CSS.
+
+### Stylus
+
+There is certainly no need to use Stylus for styling your static pages. Use whatever you like best. But Stylus does support standard CSS syntax so if you don't want to set up anything new just start writing CSS in any of the `*.styl` files and watch it compile as expected :satisfied:
+
+This boilerplate uses Stylus for page styling by default. It's pretty simple to swap out stylus for Sass, Less or even plain CSS. Just update the Webpack config files (both `webpack.config.dev.js` and `webpack.config.prod.js`) to use your loader of choice. If you're not sure how to do this check out the [Webpack loaders documentation](https://webpack.github.io/docs/loaders.html).
+
+### CSS Modules
+
+CSS Modules are provided as part of the css-loader itself. For more info check out the [CSS Loader docs][css-loader-modules]. If you haven't heard of CSS Modules check out [GitHub repo][CSS Modules]. Basically it lets you write styles local to any component or file. In my experience it makes styling much more pleasant and much less error prone. 
+
+Of course **if you don't want to use this feature you don't have to.**
+
+To disable CSS modules you just need to replace to Webpack config lines for dev and prod:
+
+```js
+// webpack.config.dev.js
+
+// Replace this...
+'css?modules&importLoaders=2&localIdentName=[name]__[local]__[hash:base64:6]',
+
+// ...with this.
+'css',
+```
+
+```js
+// webpack.config.prod.js
+
+// Replace this...
+loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=2!autoprefixer!stylus'),
+
+// ...with this.
+loader: ExtractTextPlugin.extract('style', 'css!autoprefixer!stylus'),
+```
+
+
 ## Serving static files
 
 This project will generate all the static files you need to server a full, production-ready website. However your server will likely need some configuration so that it maps the same URLs React Router uses to actual static files. For example, the "about" page might have the following URL according to React Router: `/about`.
@@ -102,6 +141,7 @@ The `font-awesome-webpack` module does not seem to work with the approach of gen
 [Babel]: https://babeljs.io/
 [Stylus]: https://learnboost.github.io/stylus/
 [CSS Modules]: https://github.com/css-modules/css-modules
+[css-loader-modules]: https://github.com/webpack/css-loader#css-modules
 [Express]: http://expressjs.com/
 [Waterline]: https://github.com/balderdashy/waterline
 [Flux]: https://facebook.github.io/flux/docs/overview.html
