@@ -87,6 +87,19 @@ ln -s $PWD/my-site.conf /path/to/nginx/conf-files/static-fun.conf
 nginx -s reload
 ```
 
+### Testing the static site with Docker
+
+First, make sure you [have Docker installed](https://www.docker.com/products/docker-toolbox) and running on your system. Then proceed.
+
+This repository includes a Docker Compose config file for quickly setting up an Nginx server to test your static site. To run it, simply run:
+
+```
+npm run -s conf > nginx.conf
+docker-compose up
+```
+
+Now run `docker ps` to get the IP address and port where the container is running. If you're using Docker Machine this will likely be something like `192.168.99.100:8080`.
+
 ### Testing the static site with Nginx on a Mac
 
 If you don't have Nginx yet install it with `brew`:
@@ -123,7 +136,7 @@ For further reading on the primary tech used in this boilerplate see the links b
 ## Roadmap
 
 - [x] Add [Docker Compose][] to run a production-like server on demand for manual testing
-- [ ] Add readme docs for testing a prod site with Docker and Docker compose
+- [x] Add readme docs for testing a prod site with Docker and Docker compose
 - [ ] Improved SVG tooling
 
 ## Troubleshooting
