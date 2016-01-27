@@ -7,17 +7,8 @@ import 'normalize.css';
 import s from './App.styl';
 import logo from './react-logo.png';
 
-// Favicon link is created server-side, this just makes webpack package it
+// Favicon link is in the template, this just makes webpack package it up for us
 import './favicon.ico';
-
-export const About = props => (
-  <div className={s.page}>
-    <div className={s.siteTitle}>
-      <h1>About</h1>
-    </div>
-    <p>Welcome, to about us.</p>
-  </div>
-);
 
 export const Home = props => (
   <div className={s.page}>

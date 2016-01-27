@@ -18,6 +18,29 @@ pre
   border-radius 3px
   border 1px solid border-gray
 
+.page
+  padding 20px
+
+.siteTitle
+  display flex
+  align-items center
+
+  +below(420px)
+    display block
+
+  img
+    display inline-block
+    width 80px
+    height 80px
+    margin-right 20px
+
+    +below(420px)
+      display block
+      margin 0 auto
+
+.hl
+  font-weight bold
+  color react-blue
 .App
   background black
   min-width 320px
@@ -46,26 +69,3 @@ pre
   .active
     background black
 
-.page
-  padding 20px
-
-.hl
-  font-weight bold
-  color react-blue
-
-.siteTitle
-  display flex
-  align-items center
-
-  +below(420px)
-    display block
-
-  img
-    display inline-block
-    width 80px
-    height 80px
-    margin-right 20px
-
-    +below(420px)
-      display block
-      margin 0 auto
