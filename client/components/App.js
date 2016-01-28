@@ -2,8 +2,6 @@ import React, { PropTypes } from 'react';
 import { Link, IndexLink } from 'react-router';
 import 'normalize.css';
 
-// TDOO: Add font awesome
-
 import s from './App.styl';
 import logo from './react-logo.png';
 

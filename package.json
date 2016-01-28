@@ -45,8 +45,6 @@
     "express": "^4.13.3",
     "extract-text-webpack-plugin": "^0.9.1",
     "file-loader": "^0.8.5",
-    "font-awesome": "^4.5.0",
-    "font-awesome-webpack": "0.0.4",
     "history": "^1.17.0",
     "normalize.css": "^3.0.3",
     "react": "^0.14.3",
