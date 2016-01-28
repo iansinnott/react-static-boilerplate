@@ -21,6 +21,12 @@ Now you're all set to deploy to your favorite hosting solution :beers:
 * Awesome developer experience
 * Flexible. No file structure or naming conventions required. Use whatever modules you want
 
+## Dynamic Routes
+
+**Iportant Note:** This boilerplate does not yet support generating static sites for dynamic routes such as `post/:id`. That's the next major feature addition (see the [Roadmap below](#roadmap)) but it hasn't been implemented yet.
+
+For more info see [this issue on the react-static-webpack-plugin repo](https://github.com/iansinnott/react-static-webpack-plugin/issues/2).
+
 ## Opinionated styling
 
 This boilerplate is slightly opinionated, especially when it comes to CSS. Don't worry, you can easily change any of this but by default I use [Stylus][] and [CSS Modules][] for compiling CSS.
@@ -137,6 +143,8 @@ For further reading on the primary tech used in this boilerplate see the links b
 
 - [x] Add [Docker Compose][] to run a production-like server on demand for manual testing
 - [x] Add readme docs for testing a prod site with Docker and Docker compose
+- [ ] Support for [dynamic content](https://github.com/iansinnott/react-static-webpack-plugin/issues/2)
+- [ ] Leverage code splitting for efficient bundling and async module loading
 - [ ] Improved SVG tooling
 
 ## Troubleshooting
