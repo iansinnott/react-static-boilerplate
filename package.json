@@ -1,6 +1,6 @@
 {
   "name": "react-static-boilerplate",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "A boilerplate for building static sites with React and React Router",
   "engines": {
     "node": "^4.2"
