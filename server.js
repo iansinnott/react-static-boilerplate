@@ -1,3 +1,4 @@
+/* eslint-disable prefer-template, no-console */
 /**
  * NOTE: This file must be run with babel-node as Node is not yet compatible
  * with all of ES6 and we also use JSX.
@@ -11,7 +12,7 @@ import webpack from 'webpack';
 import config from './webpack.config.dev.js';
 
 const Html = ({
-  title = 'Rainbow Unicorns',
+  title = 'React Starter',
   bundle = '/app.js',
   body = '',
   favicon = '',
@@ -45,7 +46,7 @@ const Html = ({
  * @param {object} props
  * @return {string}
  */
-const renderDocumentToString = props =>
+const renderToDocumentString = props =>
   '<!doctype html>' + renderToStaticMarkup(<Html {...props} />);
 
 const app = express();
@@ -62,7 +63,7 @@ app.use(require('webpack-hot-middleware')(compiler));
 // handled entirely client side and we don't make an effort to pre-render pages
 // before they are served when in dev mode.
 app.get('*', (req, res) => {
-  const html = renderDocumentToString({
+  const html = renderToDocumentString({
     bundle: config.output.publicPath + 'app.js',
   });
   res.send(html);
@@ -71,9 +72,9 @@ app.get('*', (req, res) => {
 // NOTE: url.parse can't handle URLs without a protocol explicitly defined. So
 // if we parse '//localhost:8888' it doesn't work. We manually add a protocol even
 // though we are only interested in the port.
-const { port } = url.parse('http:' + config.output.publicPath);
+const { port } = url.parse(`http:${config.output.publicPath}`);
 
 app.listen(port, 'localhost', err => {
-  if (err) return console.error(err);
+  if (err) throw err;
   console.log(`Dev server listening at http://localhost:${port}`);
 });
