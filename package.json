@@ -1,7 +1,7 @@
 {
   "name": "react-static-boilerplate",
   "version": "0.2.0",
-  "description": "A boilerplate for building static sites with React and React Router",
+  "description": "A barebones boilerplate for building apps with React",
   "engines": {
     "node": "^4.2"
   },
@@ -48,7 +48,6 @@
     "express": "^4.13.3",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
-    "history": "^2.0.0",
     "normalize.css": "^3.0.3",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
