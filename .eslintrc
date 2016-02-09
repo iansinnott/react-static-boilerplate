@@ -40,5 +40,6 @@
     // <div
     //   someProp={true}>
     "react/jsx-closing-bracket-location": [0],
+    "react/prefer-es6-class": [0],
   },
 }
