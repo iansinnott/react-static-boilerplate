@@ -10,9 +10,11 @@ A boilerplate for building static sites with [React][] and [React Router][]
 * `npm install`
 * `npm start` to run a dev server
 * Write an awesome client-side app...
-* `npm build` to minify, package and generate static HTML files from your routes
+* `npm run build` to minify, package and generate static HTML files from your routes
 
 Now you're all set to deploy to your favorite hosting solution :beers:
+
+**NOTE:** It's important to run `npm run build` and **not** `npm build`. The latter will silently exit because it is a native NPM command. 
 
 ## Project Goals
 
