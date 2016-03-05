@@ -6,7 +6,8 @@ A boilerplate for building static sites with [React][] and [React Router][]
 
 **Quick Start:**
 
-* `git clone https://github.com/iansinnott/react-static-boilerplate my-static-site && cd my-static-site && rm -rf .git`
+* `git clone https://github.com/iansinnott/react-static-boilerplate my-static-site`
+* `cd my-static-site && rm -rf .git`
 * `npm install`
 * `npm start` to run a dev server
 * Write an awesome client-side app...
