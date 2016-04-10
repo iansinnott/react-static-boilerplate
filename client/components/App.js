@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Link, IndexLink } from 'react-router';
-import 'normalize.css';
+import 'normalize.css/normalize.css';
 
 // Using CSS Modules so we assign the styles to a variable
 import s from './App.styl';
