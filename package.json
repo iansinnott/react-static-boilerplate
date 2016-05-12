@@ -3,12 +3,11 @@
   "version": "0.2.2",
   "description": "A boilerplate for building static sites with React and React Router",
   "engines": {
-    "node": "^4.2"
+    "node": "^6.1"
   },
   "scripts": {
     "clean": "rimraf public",
-    "eslint": "eslint client",
-    "lint": "npm run -s eslint",
+    "lint": "eslint client",
     "conf": "babel-node ./scripts/generate-nginx-conf.js",
     "test": "echo 'No tests specified.'",
     "start:dev": "babel-node ./server.js",
@@ -31,7 +30,7 @@
   "author": "Ian Sinnott <ian@iansinnott.com> (http://iansinnott.com)",
   "license": "MIT",
   "homepage": "",
-  "devDependencies": {
+  "dependencies": {
     "autoprefixer-loader": "^3.1.0",
     "axis": "^0.6.1",
     "babel-cli": "^6.5.1",
@@ -45,8 +44,8 @@
     "cross-env": "^1.0.7",
     "css-loader": "^0.23.0",
     "eslint": "^2.7.0",
-    "eslint-config-airbnb": "^6.2.0",
-    "eslint-plugin-react": "^4.3.0",
+    "eslint-config-rackt": "^1.1.1",
+    "eslint-plugin-react": "^5.1.1",
     "express": "^4.13.3",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
@@ -62,14 +61,11 @@
     "rimraf": "^2.4.4",
     "rupture": "^0.6.1",
     "style-loader": "^0.13.0",
+    "stylus": "^0.54.2",
     "stylus-loader": "^2.0.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.9",
     "webpack-dev-middleware": "^1.4.0",
     "webpack-hot-middleware": "^2.6.0"
-  },
-  "dependencies": {
-    "normalize.css": "^4.0.0",
-    "stylus": "^0.54.2"
   }
 }
