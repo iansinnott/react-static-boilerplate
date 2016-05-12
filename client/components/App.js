@@ -28,6 +28,19 @@ export const Home = React.createClass({
   },
 });
 
+export class About extends React.Component {
+  render() {
+    return (
+      <div className={s.page}>
+        <div className={s.siteTitle}>
+          <h1>About Page</h1>
+        </div>
+        <p>Welcome to the about page...</p>
+      </div>
+    );
+  }
+}
+
 export const NotFound = React.createClass({
   render() {
     return (
