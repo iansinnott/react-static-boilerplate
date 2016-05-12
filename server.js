@@ -3,7 +3,7 @@
  * with all of ES6 and we also use JSX.
  */
 import url from 'url';
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import express from 'express';
 import webpack from 'webpack';
@@ -23,8 +23,8 @@ const Html = ({
       <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
       <meta name='viewport' content='width=device-width, initial-scale=1' />
       <title>{title}</title>
-      {favicon && <link rel='shortcut icon' href={favicon} />}
-      {stylesheet && <link rel='stylesheet' href={stylesheet} />}
+      {favicon ? <link rel='shortcut icon' href={favicon} /> : null}
+      {stylesheet ? <link rel='stylesheet' href={stylesheet} /> : null}
     </head>
     <body>
       <div id='root' dangerouslySetInnerHTML={{ __html: body }} />
@@ -32,6 +32,13 @@ const Html = ({
     </body>
   </html>
 );
+Html.propTypes = {
+  title: PropTypes.string,
+  bundle: PropTypes.string,
+  body: PropTypes.string,
+  favicon: PropTypes.string,
+  stylesheet: PropTypes.string,
+};
 
 /**
  * Render the entire web page to a string. We use render to static markup here
@@ -74,6 +81,9 @@ app.get('*', (req, res) => {
 const { port } = url.parse('http:' + config.output.publicPath);
 
 app.listen(port, 'localhost', err => {
-  if (err) return console.error(err);
+  if (err) {
+    console.error(err);
+    return;
+  }
   console.log(`Dev server listening at http://localhost:${port}`);
 });
