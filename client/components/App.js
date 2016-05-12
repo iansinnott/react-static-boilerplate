@@ -11,7 +11,7 @@ import logo from './react-logo.png';
 // Favicon link is in the template, this just makes webpack package it up for us
 import './favicon.ico';
 
-export const Home = React.createClass({
+export class Home extends React.Component {
   render() {
     return (
       <div className={cx('page')}>
@@ -27,8 +27,8 @@ export const Home = React.createClass({
         </ul>
       </div>
     );
-  },
-});
+  }
+}
 
 export class About extends React.Component {
   render() {
@@ -43,25 +43,25 @@ export class About extends React.Component {
   }
 }
 
-export const NotFound = React.createClass({
+export class NotFound extends React.Component {
   render() {
     return (
       <div className={cx('page')}>
         <h4>Not found</h4>
       </div>
     );
-  },
-});
+  }
+}
 
 /**
  * NOTE: As of 2015-11-09 react-transform does not support a functional
  * component as the base compoenent that's passed to ReactDOM.render, so we
  * still use createClass here.
  */
-export const App = React.createClass({
-  propTypes: {
+export class App extends React.Component {
+  static propTypes = {
     children: PropTypes.any,
-  },
+  }
   render() {
     return (
       <div className={cx('App')}>
@@ -72,5 +72,5 @@ export const App = React.createClass({
         {this.props.children}
       </div>
     );
-  },
-});
+  }
+}
