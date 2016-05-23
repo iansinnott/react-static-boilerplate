@@ -6,7 +6,7 @@ import { Router, browserHistory } from 'react-router';
 import routes from './routes.js';
 
 // Only render in the browser
-if (typeof document !== 'undefined' && typeof window !== 'undefined') {
+if (typeof document !== 'undefined') {
   render(
       <Router routes={routes} history={browserHistory} />,
     document.getElementById('root')
