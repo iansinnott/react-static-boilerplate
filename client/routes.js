@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
-import { App, About, Home, NotFound } from './components/App.js';
+import App, { About, Home, NotFound } from './components/App.js';
 
 export const routes = (
   <Route path='/' title='App' component={App}>

@@ -4,3 +4,4 @@ public/
 .tmp/
 nginx.conf
 npm-debug.log
+.idea

@@ -1,7 +1,14 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import { Link, IndexLink } from 'react-router';
 import classnames from 'classnames/bind';
 import 'normalize.css';
+import {
+  actions,
+  createSelector,
+  connect,
+  isFetching as isFetchingSelector,
+  reasons as reasonsSelector,
+} from '../redux';
 
 // Using CSS Modules so we assign the styles to a variable
 import s from './App.styl';
@@ -11,8 +18,31 @@ import logo from './react-logo.png';
 // Favicon link is in the template, this just makes webpack package it up for us
 import './favicon.ico';
 
-export class Home extends React.Component {
+const { array, func, node } = PropTypes;
+
+
+const selectors = createSelector(
+  [ isFetchingSelector, reasonsSelector,],
+  ( isFetching, reasons) => ({
+    isFetching, reasons})
+);
+
+export class Home extends Component {
+  static propTypes = {
+    reasons: array,
+    generateRandomData: func,
+    allReasons: func,
+    clearReasons: func,
+  }
+  componentWillMount() {
+    const { generateRandomData } = this.props;
+    if( generateRandomData ) {
+      generateRandomData();
+    }
+
+  }
   render() {
+    const { reasons, generateRandomData, allReasons, clearReasons } = this.props;
     return (
       <div className={cx('page')}>
         <div className={cx('siteTitle')}>
@@ -25,12 +55,23 @@ export class Home extends React.Component {
           <li><span className={cx('hl')}>User</span> friendly</li>
           <li><span className={cx('hl')}>SEO</span> friendly</li>
         </ul>
+        { reasons && <div>
+          <p>More reasons? <button onClick={clearReasons}>clear (we will disappear)</button></p>
+          <button onClick={generateRandomData}>random</button>
+          <button onClick={allReasons}>all</button>
+
+          <ul>
+            { reasons.map((item, index) => <li key={index}>
+              <span className={cx('hl')}>{item}</span> supported
+            </li>)}
+          </ul>
+        </div>}
       </div>
     );
   }
 }
 
-export class About extends React.Component {
+export class About extends Component {
   render() {
     return (
       <div className={cx('page')}>
@@ -43,7 +84,7 @@ export class About extends React.Component {
   }
 }
 
-export class NotFound extends React.Component {
+export class NotFound extends Component {
   render() {
     return (
       <div className={cx('page')}>
@@ -58,9 +99,9 @@ export class NotFound extends React.Component {
  * component as the base compoenent that's passed to ReactDOM.render, so we
  * still use createClass here.
  */
-export class App extends React.Component {
+export class App extends Component {
   static propTypes = {
-    children: PropTypes.any,
+    children: node,
   }
   render() {
     return (
@@ -69,8 +110,10 @@ export class App extends React.Component {
           <IndexLink to='/' activeClassName={cx('active')}>Home</IndexLink>
           <Link to='/about' activeClassName={cx('active')}>About</Link>
         </nav>
-        {this.props.children}
+        {React.cloneElement(this.props.children, { ...this.props })}
       </div>
     );
   }
 }
+
+export default connect(selectors, actions)(App);
