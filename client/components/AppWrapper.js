@@ -5,11 +5,6 @@ import App from './App';
 import {
   createAppStore,
   Provider,
-  actions,
-  createSelector,
-  connect,
-  isFetching as isFetchingSelector,
-  reasons as reasonsSelector,
 } from '../redux';
 
 // store workaround to export app even if no document is active
@@ -20,7 +15,7 @@ let store;
 if (typeof document !== 'undefined' && typeof window !== 'undefined') {
   store = createAppStore();
 } else {
-  const middlewares = [thunk];
+  const middlewares = [ thunk ];
   const mockStore = configureMockStore(middlewares);
   store = mockStore({});
 }

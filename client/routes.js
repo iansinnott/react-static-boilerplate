@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 import { About, Home, NotFound } from './components/App.js';
-import AppWrapper from './components/AppWrapper'
+import AppWrapper from './components/AppWrapper';
 
 export const routes = (
   <Route path='/' title='App' component={AppWrapper}>

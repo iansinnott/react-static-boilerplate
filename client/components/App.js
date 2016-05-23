@@ -21,9 +21,9 @@ import './favicon.ico';
 const { array, func, node } = PropTypes;
 
 const selectors = createSelector(
-  [ isFetchingSelector, reasonsSelector,],
+  [ isFetchingSelector, reasonsSelector ],
   ( isFetching, reasons) => ({
-    isFetching, reasons})
+    isFetching, reasons })
 );
 
 export class Home extends Component {
@@ -105,11 +105,6 @@ export class App extends Component {
     children: node,
   }
   render() {
-    /*
-     * normally provider is injected even before routes,
-     * however that would fail since no provider may be selected.
-     * We generate a mock store in case we do not have a window env
-     */
     return (
       <div className={cx('App')}>
         <nav className={cx('nav')}>
