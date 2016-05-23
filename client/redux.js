@@ -4,7 +4,7 @@ import keymirror from 'keymirror';
 import thunk from 'redux-thunk';
 import Immutable, { Record }from 'immutable';
 
-const reasonsSample = [
+export const reasonsSample = [
   'redux',
   'redux devToolsExtension',
   'react-router',

@@ -20,7 +20,6 @@ import './favicon.ico';
 
 const { array, func, node } = PropTypes;
 
-
 const selectors = createSelector(
   [ isFetchingSelector, reasonsSelector,],
   ( isFetching, reasons) => ({
@@ -28,6 +27,7 @@ const selectors = createSelector(
 );
 
 export class Home extends Component {
+  // the following are all coming from redux
   static propTypes = {
     reasons: array,
     generateRandomData: func,
@@ -35,13 +35,14 @@ export class Home extends Component {
     clearReasons: func,
   }
   componentWillMount() {
+    // let us request a populatin of data via redux action
     const { generateRandomData } = this.props;
     if( generateRandomData ) {
       generateRandomData();
     }
-
   }
   render() {
+    // everything in next line provided by redux
     const { reasons, generateRandomData, allReasons, clearReasons } = this.props;
     return (
       <div className={cx('page')}>
@@ -104,6 +105,11 @@ export class App extends Component {
     children: node,
   }
   render() {
+    /*
+     * normally provider is injected even before routes,
+     * however that would fail since no provider may be selected.
+     * We generate a mock store in case we do not have a window env
+     */
     return (
       <div className={cx('App')}>
         <nav className={cx('nav')}>
@@ -115,5 +121,6 @@ export class App extends Component {
     );
   }
 }
+
 
 export default connect(selectors, actions)(App);
