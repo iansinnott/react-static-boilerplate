@@ -80,7 +80,7 @@ export function reducer(state = new State(), action){
   }
 }
 
-export default function createAppStore() {
+export function createAppStore() {
   const finalCreateStore = compose(
     applyMiddleware(thunk),
     window && window.devToolsExtension ? window.devToolsExtension() : f => f
