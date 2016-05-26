@@ -15,7 +15,7 @@ A boilerplate for building static sites with [React][] and [React Router][]
 
 Now you're all set to deploy to your favorite hosting solution :beers:
 
-**NOTE:** It's important to run `npm run build` and **not** `npm build`. The latter will silently exit because it is a native NPM command. 
+**NOTE:** It's important to run `npm run build` and **not** `npm build`. The latter will silently exit because it is a native NPM command.
 
 ## Project Goals
 
@@ -42,7 +42,7 @@ This boilerplate uses Stylus for page styling by default. It's pretty simple to 
 
 ### CSS Modules
 
-CSS Modules are provided as part of the css-loader itself. For more info check out the [CSS Loader docs][css-loader-modules]. If you haven't heard of CSS Modules check out [GitHub repo][CSS Modules]. Basically it lets you write styles local to any component or file. In my experience it makes styling much more pleasant and much less error prone. 
+CSS Modules are provided as part of the css-loader itself. For more info check out the [CSS Loader docs][css-loader-modules]. If you haven't heard of CSS Modules check out [GitHub repo][CSS Modules]. Basically it lets you write styles local to any component or file. In my experience it makes styling much more pleasant and much less error prone.
 
 Of course **if you don't want to use this feature you don't have to.**
 
@@ -149,6 +149,12 @@ For further reading on the primary tech used in this boilerplate see the links b
 - [ ] Support for [dynamic content](https://github.com/iansinnott/react-static-webpack-plugin/issues/2)
 - [ ] Leverage code splitting for efficient bundling and async module loading
 - [ ] Improved SVG tooling
+
+## Redux
+
+Interested in using Redux? Check out [this pull request](https://github.com/iansinnott/react-static-boilerplate/pull/9) and if you have issues feel free to open a [new Issue][]
+
+[new Issue]: https://github.com/iansinnott/react-static-boilerplate/issues/new
 
 ## Troubleshooting
 
