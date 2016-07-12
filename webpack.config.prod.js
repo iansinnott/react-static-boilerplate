@@ -4,7 +4,7 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var axis = require('axis');
 var rupture = require('rupture');
-var StaticSitePlugin = require('react-static-webpack-plugin');
+var ReactStaticPlugin = require('react-static-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
@@ -16,7 +16,6 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'public'),
     filename: '[name].js',
-    libraryTarget: 'umd',
     publicPath: '/',
   },
 
@@ -32,10 +31,9 @@ module.exports = {
       screw_ie8: true,
       compressor: { warnings: false },
     }),
-    new StaticSitePlugin({
-      src: 'app',
-      stylesheet: '/app.css',
-      favicon: '/favicon.ico',
+    new ReactStaticPlugin({
+      routes: './client/routes.js',
+      template: './template.js',
     }),
   ],
 
@@ -44,7 +42,7 @@ module.exports = {
       {
         test: /\.js$/,
         loaders: ['babel'],
-        include: path.join(__dirname, 'client'),
+        exclude: path.join(__dirname, 'node_modules'),
       },
       {
         test: /\.css$/,
