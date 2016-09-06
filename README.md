@@ -26,7 +26,7 @@ Now you're all set to deploy to your favorite hosting solution :beers:
 
 ## Dynamic Routes
 
-**Iportant Note:** This boilerplate does not yet support generating static sites for dynamic routes such as `post/:id`. That's the next major feature addition (see the [Roadmap below](#roadmap)) but it hasn't been implemented yet.
+**Important Note:** This boilerplate does not yet support generating static sites for dynamic routes such as `post/:id`. That's the next major feature addition (see the [Roadmap below](#roadmap)) but it hasn't been implemented yet.
 
 For more info see [this issue on the react-static-webpack-plugin repo](https://github.com/iansinnott/react-static-webpack-plugin/issues/2).
 
