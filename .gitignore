@@ -5,3 +5,4 @@ public/
 nginx.conf
 npm-debug.log
 .idea
+node_modules.bak
