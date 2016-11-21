@@ -15,12 +15,16 @@ A boilerplate for building static sites with [React][] and [React Router][]
 
 Now you're all set to deploy to your favorite hosting solution :beers:
 
+To check your production build use pushstate-server
+`npm install pushstate-server -g`
+`pushstate-server build`
+
 **NOTE:** It's important to run `npm run build` and **not** `npm build`. The latter will silently exit because it is a native NPM command.
 
 ## Project Goals
 
 * A single source of truth: Your routes
-* Intuitive. Leverage existing font-end knowledge
+* Intuitive. Leverage existing front-end knowledge
 * Awesome developer experience
 * Flexible. No file structure or naming conventions required. Use whatever modules you want
 
@@ -178,4 +182,3 @@ The `font-awesome-webpack` module does not seem to work with the approach of gen
 [React Router]: https://github.com/rackt/react-router
 [Redux]: https://github.com/rackt/redux
 [Docker Compose]: https://docs.docker.com/compose/
-

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 const Html = ({
   title = 'Rainbow Unicorns',
-  bundle = '/app.js',
+  bundle = 'app.js',
   body = '',
-  favicon = '',
-  stylesheet = '',
+  favicon = 'favicon.ico',
+  stylesheet = 'app.css',
 }) => (
   <html lang='en'>
     <head>

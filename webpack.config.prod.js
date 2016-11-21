@@ -10,11 +10,11 @@ module.exports = {
   devtool: 'source-map',
 
   entry: {
-    app: ['./client/index.js'],
+    app: [ './client/index.js' ],
   },
 
   output: {
-    path: path.join(__dirname, 'public'),
+    path: path.join(__dirname, 'build'),
     filename: '[name].js',
     publicPath: '/',
   },
@@ -41,7 +41,7 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loaders: ['babel'],
+        loaders: [ 'babel' ],
         exclude: path.join(__dirname, 'node_modules'),
       },
       {
@@ -54,20 +54,20 @@ module.exports = {
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loaders: ['url?limit=10000&mimetype=application/font-woff'],
+        loaders: [ 'url?limit=10000&mimetype=application/font-woff' ],
       },
       {
         test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loaders: ['file'],
+        loaders: [ 'file' ],
       },
       {
         test: /\.(png|jpg|gif|ico)$/,
-        loaders: ['file?name=[name].[ext]'],
+        loaders: [ 'file?name=[name].[ext]' ],
       },
     ],
   },
 
   stylus: {
-    use: [axis(), rupture()],
+    use: [ axis(), rupture() ],
   },
 };

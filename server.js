@@ -3,7 +3,7 @@
  * with all of ES6 and we also use JSX.
  */
 import url from 'url';
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import express from 'express';
 import webpack from 'webpack';
