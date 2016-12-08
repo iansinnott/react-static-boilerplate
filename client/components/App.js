@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { Link, IndexLink } from 'react-router';
 import classnames from 'classnames/bind';
 import 'normalize.css';
@@ -60,7 +60,7 @@ export class NotFound extends React.Component {
  */
 export class App extends React.Component {
   static propTypes = {
-    children: PropTypes.any,
+    children: React.PropTypes.node,
   }
   render() {
     return (
