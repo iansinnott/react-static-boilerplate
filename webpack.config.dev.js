@@ -3,6 +3,7 @@ var path = require('path');
 var webpack = require('webpack');
 var axis = require('axis');
 var rupture = require('rupture');
+var autoprefixer = require('autoprefixer');
 
 // Set up dev host host and HMR host. For the dev host this is pretty self
 // explanatory: We use a different live-reload server to server our static JS
@@ -51,7 +52,7 @@ module.exports = {
         loaders: [
           'style',
           'css?modules&importLoaders=2&localIdentName=[name]__[local]__[hash:base64:6]',
-          'autoprefixer',
+          'postcss',
           'stylus',
         ],
       },
@@ -69,6 +70,8 @@ module.exports = {
       },
     ],
   },
+
+  postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
 
   stylus: {
     use: [axis(), rupture()],

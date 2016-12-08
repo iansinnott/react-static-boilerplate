@@ -5,6 +5,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var axis = require('axis');
 var rupture = require('rupture');
 var ReactStaticPlugin = require('react-static-webpack-plugin');
+var autoprefixer = require('autoprefixer');
 
 module.exports = {
   devtool: 'source-map',
@@ -50,7 +51,7 @@ module.exports = {
       },
       {
         test: /\.styl/,
-        loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=2!autoprefixer!stylus'),
+        loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=2!postcss!stylus'),
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -66,6 +67,8 @@ module.exports = {
       },
     ],
   },
+
+  postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
 
   stylus: {
     use: [ axis(), rupture() ],
