@@ -156,9 +156,29 @@ For further reading on the primary tech used in this boilerplate see the links b
 
 ## Redux
 
-Interested in using Redux? Check out [this pull request](https://github.com/iansinnott/react-static-boilerplate/pull/9) and if you have issues feel free to open a [new Issue][]
+Redux is supported. Just be sure to tell the plugin where to find your store so that it can be passed through a `<Provider>` during the static rendering. You can edit this in `webpack.config.prod.js`
 
-[new Issue]: https://github.com/iansinnott/react-static-boilerplate/issues/new
+```js
+// webpack.config.prod.js
+new ReactStaticPlugin({
+  routes: './client/routes.js',
+  template: './template.js',
+  reduxStore: './client/store.js', // <-- ADD THIS LINE
+})
+```
+
+```js
+// ./client/store.js
+import { createStore } from 'redux';
+
+import someReducer from '../reducers';
+
+const store = createStore(someReducer);
+
+export default store;
+```
+
+👉 [Go here for a full working Redux example.](https://github.com/iansinnott/react-static-webpack-plugin/blob/master/example/redux/webpack.config.prod.js#L45)
 
 ## Troubleshooting
 
