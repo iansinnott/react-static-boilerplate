@@ -3,6 +3,8 @@
 # React Static Boilerplate
 
 A boilerplate for building static sites with [React][] and [React Router][]
+<!-- Markdown snippet -->
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/iansinnott/react-static-boilerplate)
 
 **Quick Start:**
 
