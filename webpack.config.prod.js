@@ -9,7 +9,10 @@ module.exports = {
   devtool: 'source-map',
 
   entry: {
-    app: [ './client/index.js' ],
+    app: [
+      'normalize.css',
+      './client/index.js',
+    ],
   },
 
   output: {

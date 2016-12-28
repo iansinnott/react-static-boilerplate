@@ -18,6 +18,7 @@ module.exports = {
 
   entry: {
     app: [
+      'normalize.css',
       'webpack-hot-middleware/client?path=' + HMR_HOST,
       './client/index.js',
     ],
