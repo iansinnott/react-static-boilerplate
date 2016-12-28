@@ -20,6 +20,7 @@ module.exports = {
 
   plugins: [
     new webpack.LoaderOptionsPlugin({
+      minimize: true,
       options: {
         postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
         stylus: {
