@@ -2,14 +2,14 @@
  * NOTE: This file must be run with babel-node as Node is not yet compatible
  * with all of ES6 and we also use JSX.
  */
-import url from 'url';
-import React from 'react';
-import { renderToStaticMarkup } from 'react-dom/server';
-import express from 'express';
-import webpack from 'webpack';
+const url = require('url');
+const React = require('react');
+const { renderToStaticMarkup } = require('react-dom/server');
+const express = require('express');
+const webpack = require('webpack');
 
-import config from './webpack.config.dev.js';
-import Html from './template.js';
+const config = require('./webpack.config.dev.js');
+const Html = require('./template.js');
 
 /**
  * Render the entire web page to a string. We use render to static markup here

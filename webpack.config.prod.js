@@ -1,11 +1,9 @@
-/* eslint-disable no-var */
-var path = require('path');
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var axis = require('axis');
-var rupture = require('rupture');
-var ReactStaticPlugin = require('react-static-webpack-plugin');
-var autoprefixer = require('autoprefixer');
+const path = require('path');
+const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const rupture = require('rupture');
+const ReactStaticPlugin = require('react-static-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
   devtool: 'source-map',
@@ -21,15 +19,26 @@ module.exports = {
   },
 
   plugins: [
-    new ExtractTextPlugin('[name].css', { allChunks: true }),
-    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
+        stylus: {
+          use: [rupture()],
+        },
+      },
+    }),
+    new ExtractTextPlugin({
+      filename: '[name].css',
+      allChunks: true,
+    }),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('production'),
+        NODE_ENV: JSON.stringify('production'),
       },
     }),
     new webpack.optimize.UglifyJsPlugin({
       screw_ie8: true,
+      sourceMap: true,
       compressor: { warnings: false },
     }),
     new ReactStaticPlugin({
@@ -39,38 +48,55 @@ module.exports = {
   ],
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        loaders: [ 'babel' ],
         exclude: path.join(__dirname, 'node_modules'),
+        loader: 'babel-loader',
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style', 'css'),
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: 'css-loader',
+        }),
       },
       {
-        test: /\.styl/,
-        loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=2!postcss!stylus'),
+        test: /\.styl$/,
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: [
+            {
+              loader: 'css-loader',
+              options: {
+                module: true,
+                importLoaders: 2,
+              },
+            },
+            { loader: 'postcss-loader' },
+            { loader: 'stylus-loader' },
+          ],
+        }),
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loaders: [ 'url?limit=10000&mimetype=application/font-woff' ],
+        use: [
+          {
+            loader: 'url-loader',
+            options: { limit: 10000, mimetype: 'mimetype=application/font-woff' },
+          },
+        ],
       },
       {
         test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loaders: [ 'file' ],
+        loader: 'file-loader',
       },
       {
         test: /\.(png|jpg|gif|ico)$/,
-        loaders: [ 'file?name=[name].[ext]' ],
+        use: [
+          { loader: 'file-loader', options: { name: '[name].[ext]' } },
+        ],
       },
     ],
-  },
-
-  postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
-
-  stylus: {
-    use: [ axis(), rupture() ],
   },
 };

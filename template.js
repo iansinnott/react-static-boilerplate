@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+const React = require('react');
+const T = React.PropTypes;
 
 const Html = ({
   title = 'Rainbow Unicorns',
@@ -24,11 +25,11 @@ const Html = ({
 );
 
 Html.propTypes = {
-  title: PropTypes.string,
-  bundle: PropTypes.string,
-  body: PropTypes.string,
-  favicon: PropTypes.string,
-  stylesheet: PropTypes.string,
+  title: T.string,
+  bundle: T.string,
+  body: T.string,
+  favicon: T.string,
+  stylesheet: T.string,
 };
 
-export default Html;
+module.exports = Html;

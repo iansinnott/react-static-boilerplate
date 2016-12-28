@@ -1,9 +1,7 @@
-/* eslint-disable no-var */
-var path = require('path');
-var webpack = require('webpack');
-var axis = require('axis');
-var rupture = require('rupture');
-var autoprefixer = require('autoprefixer');
+const path = require('path');
+const webpack = require('webpack');
+const rupture = require('rupture');
+const autoprefixer = require('autoprefixer');
 
 // Set up dev host host and HMR host. For the dev host this is pretty self
 // explanatory: We use a different live-reload server to server our static JS
@@ -11,9 +9,9 @@ var autoprefixer = require('autoprefixer');
 // host so it can load the right files. The HRM host is a bit stranger. For more
 // details on why we need this URL see the readme and:
 // https://github.com/glenjamin/webpack-hot-middleware/issues/37
-var DEV_PORT = process.env.DEV_PORT || 3000;
-var DEV_HOST = '//localhost:' + DEV_PORT + '/';
-var HMR_HOST = DEV_HOST + '__webpack_hmr';
+const DEV_PORT = process.env.DEV_PORT || 3000;
+const DEV_HOST = '//localhost:' + DEV_PORT + '/';
+const HMR_HOST = DEV_HOST + '__webpack_hmr';
 
 module.exports = {
   devtool: 'inline-source-map',
@@ -34,46 +32,67 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
+        stylus: {
+          use: [rupture()],
+        },
+      },
+    }),
   ],
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        loaders: ['babel'],
         include: path.join(__dirname, 'client'),
+        loader: 'babel-loader',
       },
       {
         test: /\.css$/,
-        loaders: ['style', 'css'],
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader' },
+        ],
       },
       {
-        test: /\.styl/,
-        loaders: [
-          'style',
-          'css?modules&importLoaders=2&localIdentName=[name]__[local]__[hash:base64:6]',
-          'postcss',
-          'stylus',
+        test: /\.styl$/,
+        use: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              module: true,
+              importLoaders: 2,
+              localIdentName: '[name]__[local]__[hash:base64:6]',
+            },
+          },
+          { loader: 'postcss-loader' },
+          {
+            loader: 'stylus-loader',
+          },
         ],
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loaders: ['url?limit=10000&mimetype=application/font-woff'],
+        use: [
+          {
+            loader: 'url-loader',
+            options: { limit: 10000, mimetype: 'mimetype=application/font-woff' },
+          },
+        ],
       },
       {
         test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loaders: ['file'],
+        loader: 'file-loader',
       },
       {
         test: /\.(png|jpg|gif|ico)$/,
-        loaders: ['file?name=[name].[ext]'],
+        use: [
+          { loader: 'file-loader', options: { name: '[name].[ext]' } },
+        ],
       },
     ],
-  },
-
-  postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
-
-  stylus: {
-    use: [axis(), rupture()],
   },
 };
