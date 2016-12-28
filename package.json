@@ -41,7 +41,7 @@
     "history": "^4.4.1",
     "normalize.css": "^5.0.0",
     "postcss-loader": "^1.2.0",
-    "react-static-webpack-plugin": "^1.5.1",
+    "react-static-webpack-plugin": "^2.0.0",
     "react-transform-catch-errors": "^1.0.2",
     "react-transform-hmr": "^1.0.4",
     "redbox-react": "^1.2.5",
