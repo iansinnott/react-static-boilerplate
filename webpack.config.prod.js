@@ -62,7 +62,9 @@ module.exports = {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract({
           fallbackLoader: 'style-loader',
-          loader: 'css-loader',
+          loader: [
+            { loader: 'css-loader' },
+          ],
         }),
       },
       {
@@ -72,9 +74,13 @@ module.exports = {
           loader: [
             {
               loader: 'css-loader',
-              options: {
-                module: true,
+              // TODO: It seems this should be named `options` but currently
+              // extract-text-wepback plugin only supports `query`. See:
+              // https://github.com/webpack/extract-text-webpack-plugin/issues/302
+              query: {
+                modules: true,
                 importLoaders: 2,
+                localIdentName: '[hash:base64:8]',
               },
             },
             { loader: 'postcss-loader' },

@@ -51,7 +51,7 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^2.1.0",
     "url-loader": "^0.5.7",
-    "webpack": "2.2.0-rc.2",
+    "webpack": "beta",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.10.0"
   },
@@ -61,6 +61,7 @@
     "react-router": "^3.0.0"
   },
   "scripts": {
+    "build-app-time": "app-time build",
     "clean": "rimraf build",
     "lint": "eslint client",
     "conf": "babel-node ./scripts/generate-nginx-conf.js",
