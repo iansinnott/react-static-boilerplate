@@ -4,6 +4,8 @@
 
 A boilerplate for building static sites with [React][] and [React Router][]
 
+**NOTE:** The Webpack 2 version of this project is in beta, check out the `webpack-2` branch if you'd like to use it.
+
 **Quick Start:**
 
 * `git clone https://github.com/iansinnott/react-static-boilerplate my-static-site`
