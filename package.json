@@ -1,6 +1,6 @@
 {
   "name": "react-static-boilerplate",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A boilerplate for building static sites with React and React Router",
   "repository": {
     "type": "git",
