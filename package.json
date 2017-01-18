@@ -36,8 +36,10 @@
   },
   "scripts": {
     "start": "app-time start",
+    "start:dashboard": "app-time start --dashboard",
     "prebuild": "rimraf build",
     "build": "app-time build",
+    "build:analyze": "app-time build --analyze",
     "lint": "eslint client",
     "conf": "node ./scripts/generate-nginx-conf.js",
     "test": "echo 'No tests specified.'",

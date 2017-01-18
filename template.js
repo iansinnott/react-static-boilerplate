@@ -24,8 +24,8 @@ const Html = ({ title = 'Amazing Default Title', body, manifest }) => {
 };
 
 Html.propTypes = {
-  title: T.string,
-  body: T.string,
+  title: T.string.isRequired,
+  body: T.string.isRequired,
   manifest: T.object.isRequired,
 };
 
