@@ -23,9 +23,14 @@ const Html = ({ title = 'Amazing Default Title', body, manifest }) => {
   );
 };
 
+/**
+ * NOTE: These props aren't marked as required here because this template is
+ * used by the dev server as well, and in dev mode there is no title or body
+ * passed. The manifest will still be present.
+ */
 Html.propTypes = {
-  title: T.string.isRequired,
-  body: T.string.isRequired,
+  title: T.string,
+  body: T.string,
   manifest: T.object.isRequired,
 };
 
