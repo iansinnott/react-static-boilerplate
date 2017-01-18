@@ -1,10 +1,8 @@
 ![React Static Boilerplate](http://dropsinn.s3.amazonaws.com/Screen%20Shot%202016-01-03%20at%208.39.55%20PM.png)
 
-# React Static Boilerplate v2
+# React Static Boilerplate
 
-A boilerplate for building static sites with [React][] and [React Router][]
-
-**UPDATE 2017:** The Webpack 2 version of this project is in beta, check out the [`webpack-2` branch](https://github.com/iansinnott/react-static-boilerplate/tree/webpack-2) if you'd like to use it.
+A boilerplate for building static sites with [Webpack][], [React][] and [React Router][].
 
 **Quick Start:**
 
@@ -223,7 +221,7 @@ export default store;
 The `font-awesome-webpack` module does not seem to work with the approach of generating files as UMD modules then requiring them from the public dir. It throws an error about window not being defined.
 
 [React]: http://facebook.github.io/react/
-[Webpack]: http://webpack.github.io/
+[Webpack]: https://webpack.js.org/
 [Babel]: https://babeljs.io/
 [Stylus]: https://learnboost.github.io/stylus/
 [CSS Modules]: https://github.com/css-modules/css-modules
