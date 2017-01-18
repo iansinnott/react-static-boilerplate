@@ -1,6 +1,6 @@
 ![React Static Boilerplate](http://dropsinn.s3.amazonaws.com/Screen%20Shot%202016-01-03%20at%208.39.55%20PM.png)
 
-# React Static Boilerplate
+# React Static Boilerplate v2
 
 A boilerplate for building static sites with [React][] and [React Router][]
 
@@ -22,6 +22,36 @@ To check your production build use pushstate-server
 `pushstate-server build`
 
 **NOTE:** It's important to run `npm run build` and **not** `npm build`. The latter will silently exit because it is a native NPM command.
+
+## Changes Jan 2017
+
+Webpack 2 was just released. In celebration, here are some fun new features:
+
+* Dev tooling is a dependency! It is no longer part of this repo. This means future upgrades will be a breeze.
+* Support for Webpack 2
+* Fully mocked client side environment, so code that requires the DOM/BOM should still compile
+* Support for [webpack-dashbaord][] + improved dev server logging (`npm run start:dashboard`)
+* Asset fingerprinting to make long-term caching a breeze (Adds hash to output files. Ex `app.72266bec.js`)
+* Analyze the size of your bundle [webpack-bundle-analyzer plugin][] (`npm run build:analyze`. See screenshot below of output below)
+
+[webpack-bundle-analyzer plugin]: https://github.com/th0r/webpack-bundle-analyzer
+[webpack-dashbaord]: https://github.com/FormidableLabs/webpack-dashboard
+
+## Usage Commands
+
+**`npm run start`**: Start a dev server
+
+**`npm run start:dashboard`**: Start a dev server with Webpack Dashboard
+
+**`npm run build`**: Compile, minify and fingerprint everything and create static files from routes
+
+**`npm run build:analyze`**: Same as above, but will also output `webpack-bundle-analyzer-stats.json` and `webpack-bundle-analyzer-report.html` for you to analyze. Open the HTML file in a web browser to analyze the bundle. Or from the CLI:
+
+```
+open build/webpack-bundle-analyzer-report.html
+```
+
+![webpack-bundle-analyzer](http://dropsinn.s3.amazonaws.com/Screen%20Shot%202017-01-18%20at%2012.05.15%20PM.png)
 
 ## Project Goals
 

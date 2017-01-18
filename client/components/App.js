@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, IndexLink } from 'react-router';
 import classnames from 'classnames/bind';
-import 'normalize.css';
 
 // Using CSS Modules so we assign the styles to a variable
 import s from './App.styl';
