@@ -9,13 +9,13 @@
  * defaults you can simply not make use of the `config` passed in to the
  * function and return a full webpack config of your own making.
  */
-module.exports = (config, defaults) => ({
+module.exports = (config, apptime) => ({
   ...config,
   entry: {
     app: [
       'normalize.css',
       'font-awesome/css/font-awesome.css',
-      defaults.hmrEntry,
+      apptime.hmrEntry,
       './client/index.js',
     ],
   },

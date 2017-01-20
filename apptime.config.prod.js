@@ -9,13 +9,23 @@
  * defaults you can simply not make use of the `config` passed in to the
  * function and return a full webpack config of your own making.
  */
-module.exports = (config, defaults) => ({
+module.exports = (config, apptime) => ({
   ...config,
+
+  //// If you need to wrap your compiled pages in a redux store before render you
+  //// can use this option
+  //
+  // ...apptime.ReactStaticPlugin({
+  //   routes: './client/routes.js',
+  //   template: './template.js',
+  //   reduxStore: './client/store.js',
+  // }),
+
   entry: {
     app: [
       'normalize.css',
       'font-awesome/css/font-awesome.css',
-      defaults.polyfill,
+      apptime.polyfill,
       './client/index.js',
     ],
   },
