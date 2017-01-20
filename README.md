@@ -186,15 +186,19 @@ For further reading on the primary tech used in this boilerplate see the links b
 
 ## Redux
 
-Redux is supported. Just be sure to tell the plugin where to find your store so that it can be passed through a `<Provider>` during the static rendering. You can edit this in `webpack.config.prod.js`
+Redux is supported. Just be sure to tell the plugin where to find your store so that it can be passed through a `<Provider>` during the static rendering. You can configure this in `apptime.config.prod.js` using the `ReactStaticPlugin` configuration function:
 
 ```js
-// webpack.config.prod.js
-new ReactStaticPlugin({
-  routes: './client/routes.js',
-  template: './template.js',
-  reduxStore: './client/store.js', // <-- ADD THIS LINE
-})
+// apptime.config.prod.js
+module.exports = (config, apptime) => ({
+  ...config, // Base config
+
+  ...apptime.ReactStaticPlugin({
+    routes: './client/routes.js',
+    reduxStore: './client/redux/store.js', // Add redux store
+    template: './template.js',
+  }),
+});
 ```
 
 ```js
