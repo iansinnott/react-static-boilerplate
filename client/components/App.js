@@ -20,7 +20,7 @@ export class Home extends React.Component {
         </div>
         <p>Why React static?</p>
         <ul>
-          <li><span className={s.hl}>Dev</span> friendly</li>
+          <li><span className={cx('hl')}>Dev</span> friendly</li>
           <li><span className={cx('hl')}>User</span> friendly</li>
           <li><span className={cx('hl')}>SEO</span> friendly</li>
         </ul>
