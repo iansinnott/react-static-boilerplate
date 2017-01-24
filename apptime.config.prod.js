@@ -22,6 +22,7 @@ module.exports = (config, apptime) => ({
   // }),
 
   entry: {
+    ...config.entry, // Make sure the vendor entry point is included
     app: [
       'normalize.css',
       'font-awesome/css/font-awesome.css',

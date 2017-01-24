@@ -34,7 +34,18 @@
     "react-dom": "^15.1.0",
     "react-router": "^3.0.0"
   },
+  "apptime": {
+    "vendorLibs": [
+      "core-js",
+      "classnames",
+      "history",
+      "react",
+      "react-dom",
+      "react-router"
+    ]
+  },
   "scripts": {
+    "postinstall": "app-time setup",
     "start": "app-time start",
     "start:dashboard": "app-time start --dashboard",
     "prebuild": "rimraf build",

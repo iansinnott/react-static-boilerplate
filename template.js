@@ -17,6 +17,7 @@ const Html = ({ title = 'Amazing Default Title', body, manifest }) => {
       </head>
       <body>
         <div id='root' dangerouslySetInnerHTML={{ __html: body }} />
+        <script src={manifest['vendor.js']} />
         <script src={manifest['app.js']} />
       </body>
     </html>

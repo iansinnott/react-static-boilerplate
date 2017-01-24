@@ -7,3 +7,5 @@ npm-debug.log
 .idea
 node_modules.bak
 my-site.conf
+.apptime
+TODO.md
