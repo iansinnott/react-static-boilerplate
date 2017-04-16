@@ -101,9 +101,9 @@ anymatch@^1.3.0:
     arrify "^1.0.0"
     micromatch "^2.1.5"
 
-app-time@>=0.7.0:
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/app-time/-/app-time-0.8.1.tgz#ee8a6c594b80423d7aedd062b58df86fe3afd2bc"
+app-time@>=0.8.2:
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/app-time/-/app-time-0.8.2.tgz#8a86eeb09bc2199382d9d6a17533b5d40c80ca78"
   dependencies:
     autoprefixer "^6.6.0"
     babel-core "^6.21.0"
@@ -114,13 +114,13 @@ app-time@>=0.7.0:
     babel-preset-stage-1 "^6.16.0"
     chalk "^1.1.3"
     core-js "^2.4.1"
-    css-loader "^0.26.1"
+    css-loader "^0.28.0"
     debug "^2.5.2"
     express "^4.14.0"
     extract-text-webpack-plugin "^2.0.0"
-    file-loader "^0.9.0"
+    file-loader "^0.11.1"
     instyll "^0.1.3"
-    normalize.css "^5.0.0"
+    normalize.css "^6.0.0"
     ora "^0.4.0"
     postcss-loader "^1.2.1"
     react "^15.4.1"
@@ -128,13 +128,13 @@ app-time@>=0.7.0:
     react-router "^3.0.0"
     react-static-webpack-plugin ">= 2.1.0"
     rupture "^0.6.2"
-    style-loader "^0.13.1"
+    style-loader "^0.16.1"
     stylus "^0.54.5"
-    stylus-loader "^2.4.0"
+    stylus-loader "^3.0.1"
     url-loader "^0.5.7"
     webpack "^2.2.0"
     webpack-bundle-analyzer "^2.2.1"
-    webpack-dashboard "^0.2.1"
+    webpack-dashboard "^0.3.0"
     webpack-dev-middleware "^1.9.0"
     webpack-hot-middleware "^2.14.0"
     webpack-manifest-plugin "^1.1.0"
@@ -1473,9 +1473,9 @@ css-color-names@0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/css-color-names/-/css-color-names-0.0.4.tgz#808adc2e79cf84738069b646cb20ec27beb629e0"
 
-css-loader@^0.26.1:
-  version "0.26.4"
-  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-0.26.4.tgz#b61e9e30db94303e6ffc892f10ecd09ad025a1fd"
+css-loader@^0.28.0:
+  version "0.28.0"
+  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-0.28.0.tgz#417cfa9789f8cde59a30ccbf3e4da7a806889bad"
   dependencies:
     babel-code-frame "^6.11.0"
     css-selector-tokenizer "^0.7.0"
@@ -2146,11 +2146,11 @@ file-entry-cache@^2.0.0:
     flat-cache "^1.2.1"
     object-assign "^4.0.1"
 
-file-loader@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-0.9.0.tgz#1d2daddd424ce6d1b07cfe3f79731bed3617ab42"
+file-loader@^0.11.1:
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-0.11.1.tgz#6b328ee1234a729e4e47d36375dd6d35c0e1db84"
   dependencies:
-    loader-utils "~0.2.5"
+    loader-utils "^1.0.2"
 
 filename-regex@^2.0.0:
   version "2.0.0"
@@ -2966,7 +2966,7 @@ loader-runner@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/loader-runner/-/loader-runner-2.3.0.tgz#f482aea82d543e07921700d5a46ef26fdac6b8a2"
 
-loader-utils@^0.2.16, loader-utils@^0.2.9, loader-utils@~0.2.5:
+loader-utils@^0.2.16:
   version "0.2.17"
   resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-0.2.17.tgz#f86e6374d43205a6e6c60e9196f17c0299bfb348"
   dependencies:
@@ -3245,6 +3245,10 @@ normalize-url@^1.4.0:
 normalize.css@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-5.0.0.tgz#7cec875ce8178a5333c4de80b68ea9c18b9d7c37"
+
+normalize.css@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-6.0.0.tgz#22188c2707c911fb3ad3c1aac0677ff68661bea8"
 
 npmlog@^4.0.2:
   version "4.0.2"
@@ -4490,17 +4494,17 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-style-loader@^0.13.1:
-  version "0.13.2"
-  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.13.2.tgz#74533384cf698c7104c7951150b49717adc2f3bb"
+style-loader@^0.16.1:
+  version "0.16.1"
+  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.16.1.tgz#50e325258d4e78421dd9680636b41e8661595d10"
   dependencies:
     loader-utils "^1.0.2"
 
-stylus-loader@^2.4.0:
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/stylus-loader/-/stylus-loader-2.5.1.tgz#d5ad8a7e0958adc12b8581e7bb169b9a61d54216"
+stylus-loader@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/stylus-loader/-/stylus-loader-3.0.1.tgz#77f4b34fd030d25b2617bcf5513db5b0730c4089"
   dependencies:
-    loader-utils "^0.2.9"
+    loader-utils "^1.0.2"
     lodash.clonedeep "^4.5.0"
     when "~3.6.x"
 
@@ -4801,9 +4805,9 @@ webpack-bundle-analyzer@^2.2.1:
     mkdirp "^0.5.1"
     opener "^1.4.3"
 
-webpack-dashboard@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/webpack-dashboard/-/webpack-dashboard-0.2.1.tgz#87e1be50ff055d055b796a2c54381f32af2f55b9"
+webpack-dashboard@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/webpack-dashboard/-/webpack-dashboard-0.3.0.tgz#d0fe182a0976a8ff0ea01b0507f29a034cd60a1c"
   dependencies:
     blessed "^0.1.81"
     commander "^2.9.0"
