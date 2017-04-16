@@ -1,4 +1,5 @@
 import React from 'react';
+import T from 'prop-types';
 import { Link, IndexLink } from 'react-router';
 import classnames from 'classnames/bind';
 
@@ -59,8 +60,9 @@ export class NotFound extends React.Component {
  */
 export class App extends React.Component {
   static propTypes = {
-    children: React.PropTypes.node,
-  }
+    children: T.node,
+  };
+
   render() {
     return (
       <div className={cx('App')}>

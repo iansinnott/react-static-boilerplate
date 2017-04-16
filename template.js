@@ -1,6 +1,6 @@
 /* eslint-disable react/no-danger */
 const React = require('react');
-const T = React.PropTypes;
+const T = require('prop-types');
 
 const Html = ({ title = 'Amazing Default Title', body, manifest }) => {
   return (
