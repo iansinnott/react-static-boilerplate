@@ -49,6 +49,15 @@ Webpack 2 was just released. In celebration, here are some fun new features:
 open build/webpack-bundle-analyzer-report.html
 ```
 
+**`npm run eject`**: This project uses another project of mine, [app-time][], to run builds. That means all the nasty webpack config stuff is hidden away. But sometimes you really just need to customize the hell out of the build process so if you need to you can run this command to remove the app-time dependency and bring all the config files into your own project. This cannot be undone once you've made changes to the config, but if you do change your mind before modifying any code you can always revert:
+
+```
+git checkout .
+rm -rf apptime
+```
+
+[app-time]: https://github.com/iansinnott/app-time/
+
 ![webpack-bundle-analyzer](http://dropsinn.s3.amazonaws.com/Screen%20Shot%202017-01-18%20at%2012.05.15%20PM.png)
 
 ## Project Goals
