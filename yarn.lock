@@ -101,9 +101,9 @@ anymatch@^1.3.0:
     arrify "^1.0.0"
     micromatch "^2.1.5"
 
-app-time@>=0.8.2:
-  version "0.8.2"
-  resolved "https://registry.yarnpkg.com/app-time/-/app-time-0.8.2.tgz#8a86eeb09bc2199382d9d6a17533b5d40c80ca78"
+app-time@^0.10.2:
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/app-time/-/app-time-0.10.2.tgz#8aaeb5757dea162b887d97a7206711820816479c"
   dependencies:
     autoprefixer "^6.6.0"
     babel-core "^6.21.0"
