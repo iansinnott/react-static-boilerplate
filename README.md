@@ -1,3 +1,7 @@
+⚠️ **UNMAINTAINED** ⚠️ This project is no longer maintained because I've found [Gatsby](https://www.gatsbyjs.org/) does everything I originally wanted and more. So feel free to use/fork this project, but it is no longer under active development.
+
+---
+
 ![React Static Boilerplate](http://dropsinn.s3.amazonaws.com/Screen%20Shot%202016-01-03%20at%208.39.55%20PM.png)
 
 # React Static Boilerplate
